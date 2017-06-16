@@ -19,14 +19,14 @@ Simple Java code to read from data lake, download dependent JARS from data lake 
     1 - Type "nano SparkJava1.txt" (or use VI or whatever) and place the below in the file.  Change the << >> items.
     { "args":
     [
-    "<<APPLICATION INSIGHTS Instrumentation Key>>"
+    "<<APPLICATION INSIGHTS Instrumentation Key GUID from Azure Portal>>"
     "adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/input/HVAC.csv",
     "adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/output/AppInsight"
     ],
     "jars":[
     "adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/applicationinsights-core-1.0.8.jar"
     ],
-    "file":"adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/SparkjAVA.jar",
+    "file":"adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/SparkJava.jar",
     "className":"sample.SparkJavaTest" }
 
     2 - Run the job via Livy.  You need to delete your output folder if it exists (e.g. /livy/output/ADLSIOTest)
