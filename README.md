@@ -1,5 +1,5 @@
 # Azure-Spark-Livy-Application-Insights-External-Dependency
-Use Spark with Livy along with Application Insights.  Learn to host your external dependencies in data lake.
+Use Spark with Livy along with Application Insights.  Learn to host your external dependencies in data lake.  This means you can use HDInsight as a transient (or stateless) cluster.  Keep your code on Azure Data Lake Store, keep your dependencies on Azure Data Lake Store and then invoke via a REST call from any computer.
 
 ## Steps to run this script:
 1 - Create a Azure Data Lake Storage account
@@ -37,3 +37,9 @@ Simple Java code to read from data lake, download dependent JARS from data lake 
 
     4 - Delete the batch
     curl -k --user "admin:<<YOUR-HDI-PASSWORD>>" -v -X DELETE "<<YOUR-HDI-CLUSTERNAME>>.azurehdinsight.net/livy/batches/0"
+
+## Notes
+If you want to run your code on your cluster you can run like this
+    spark-submit --master yarn --deploy-mode cluster --jars adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/applicationinsights-core-1.0.8.jar --class sample.SparkJavaTest SparkJava.jar "<<APPLICATION INSIGHTS Instrumentation Key>>" adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/input/HVAC.csv adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/output/app20
+    
+    
