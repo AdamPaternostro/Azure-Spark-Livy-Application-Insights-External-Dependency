@@ -44,3 +44,8 @@ If you want to run your code on your cluster you can run like this
     spark-submit --master yarn --deploy-mode cluster --jars adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/applicationinsights-core-1.0.8.jar --class sample.SparkJavaTest SparkJava.jar "<<APPLICATION INSIGHTS Instrumentation Key>>" adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/input/HVAC.csv adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/output/app20
     
     
+## Application Insights
+You can now see the data inside of Application Insights.  This data can then be surfaced in OMS and shown on a dashboard.  By instrumenting your Spark jobs with good metrics will allow you to see whats happening inside your code while being processed by Spark. 
+![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Spark-Livy-Application-Insights-External-Dependency/master/CustomEvents.png)
+
+![alt tag](https://raw.githubusercontent.com/AdamPaternostro/Azure-Spark-Livy-Application-Insights-External-Dependency/master/CustomMetrics.png)
