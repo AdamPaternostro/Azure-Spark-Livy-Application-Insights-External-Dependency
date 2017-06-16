@@ -40,6 +40,7 @@ Simple Java code to read from data lake, download dependent JARS from data lake 
 
 ## Notes
 If you want to run your code on your cluster you can run like this
+
     spark-submit --master yarn --deploy-mode cluster --jars adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/code/applicationinsights-core-1.0.8.jar --class sample.SparkJavaTest SparkJava.jar "<<APPLICATION INSIGHTS Instrumentation Key>>" adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/input/HVAC.csv adl://<<YOUR-DATA-LAKE>>.azuredatalakestore.net/livy/output/app20
     
     
